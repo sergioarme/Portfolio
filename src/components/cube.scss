@@ -1,0 +1,139 @@
+@import "../styles/variables.scss";
+
+.screen {
+  position: relative;
+  overflow: hidden;
+  perspective-origin: 50% 50%;
+  perspective: 150vw;
+  background: radial-gradient($c3dfon7, $c3dfon9 100%);
+}
+.childrendiv {
+  min-height: 100vh;
+  color: $clight;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  z-index: 99;
+  margin: auto;
+  transform: translatez(-10vw);
+}
+.room {
+  display: block;
+  font-size: 0.18vw;
+  width: 600em;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  transition: transform ease-in-out 0.3s;
+  transform-style: preserve-3d;
+  transform: translatex(-50em) translatez(-150em);
+  z-index: -1;
+}
+
+.lateral_left,
+.lateral_right,
+.lateral_front {
+  position: absolute;
+  width: 400em;
+  height: 100%;
+}
+
+.lateral_left {
+  transform: rotatey(90deg) translatez(-200em) translatey(0);
+  background: linear-gradient(0deg, $c3dlat9 0%, $c3dlat7 52%);
+}
+.lateral_right {
+  transform: rotatey(-90deg) translatez(-400em) translatey(0);
+  background: linear-gradient(0deg, $c3dlat9 0%, $c3dlat7 52%);
+}
+.lateral_front {
+  z-index: 8;
+  width: 600em;
+  height: 100%;
+  transform: translatez(-200em) translatey(0);
+  background: radial-gradient($c3dlat7, $c3dlat9);
+}
+
+.darkcube {
+  .screen {
+    animation: flouback;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+  }
+  .childrendiv {
+    color: $cdarck;
+  }
+  .lateral_left {
+    animation: floulat;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+  }
+  .lateral_right {
+    animation: floulat;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+  }
+  .lateral_front {
+    animation: floufront;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes floulat {
+  7% {
+    background: linear-gradient(0deg, $c3dlat9 0%, $c3dlat7 52%);
+  }
+
+  8% {
+    background: linear-gradient(0deg, $c3dfon3 0%, $c3dfon0 52%);
+  }
+  10% {
+    background: linear-gradient(0deg, $c3dlat9 0%, $c3dlat7 52%);
+  }
+  35% {
+    background: linear-gradient(0deg, rgb(179, 179, 179) 0%, $c3dfon3 52%);
+  }
+  100% {
+    background: linear-gradient(0deg, $c3dfon3 0%, $c3dfon0 52%);
+  }
+}
+
+@keyframes floufront {
+  7% {
+    background: radial-gradient($c3dlat7, $c3dlat9);
+  }
+
+  8% {
+    background: radial-gradient($c3dlat0, $c3dlat3);
+  }
+  10% {
+    background: radial-gradient($c3dlat7, $c3dlat9);
+  }
+  35% {
+    background: radial-gradient($c3dlat3, rgb(101, 101, 101));
+  }
+  100% {
+    background: radial-gradient($c3dlat0, $c3dlat3);
+  }
+}
+
+@keyframes flouback {
+  7% {
+    background: radial-gradient($c3dfon7, $c3dfon9 100%);
+  }
+
+  8% {
+    background: radial-gradient(#ffffff, rgb(229 229 229) 100%);
+  }
+  10% {
+    background: radial-gradient($c3dfon7, $c3dfon9 100%);
+  }
+  35% {
+    background: radial-gradient(rgb(255, 255, 255), $c3dfon7 100%);
+  }
+  100% {
+    background: radial-gradient(#ffffff, rgb(229 229 229) 100%);
+  }
+}

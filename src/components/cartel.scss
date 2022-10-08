@@ -1,0 +1,30 @@
+@import "../styles/variables.scss";
+
+.cartel {
+  height: 90px;
+  padding: 1em 3rem;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  z-index: 1;
+  background: inherit;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  &:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.191);
+    backdrop-filter: blur(6px);
+    margin: -20px;
+  }
+}

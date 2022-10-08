@@ -1,0 +1,25 @@
+@import "../styles/variables.scss";
+
+.habilidades {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  &__content {
+    padding: 30px;
+    max-width: 1000px;
+    margin: 180px 0 120px 0;
+
+    &__skill {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      gap: 1.5em;
+      flex-wrap: wrap;
+    }
+  }
+}

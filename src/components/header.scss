@@ -1,0 +1,175 @@
+@import "../styles/variables.scss";
+
+.header {
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $cdarck;
+  transition: background-color 0.5s;
+  left: 0;
+  top: 0;
+  z-index: 20;
+
+  &__logo {
+    color: $clight;
+    display: block;
+    font-size: 30px;
+    transition: all 0.5s;
+    p {
+      color: white;
+      margin: 0.5em;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    ul {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-around;
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      padding: 1.5em 0 0;
+    }
+    a {
+      display: block;
+      color: $cprimary;
+      padding: 15px;
+      transition: all 0.1s;
+    }
+    a:hover {
+      transition: all 0.1s;
+      transform: scale(110%);
+    }
+    a:active {
+      color: $cprimaryhover;
+    }
+    button {
+      display: none;
+    }
+  }
+
+  &__rrss {
+    padding: 20px 5px;
+    &__icon {
+      font-size: 30px;
+    }
+    &__icon:hover {
+      transition: all 0.1s;
+      transform: scale(110%);
+    }
+    &__icon:active {
+      color: $cprimaryhover;
+    }
+  }
+}
+
+@media screen and (max-height: 630px), screen and (max-width: 900px) {
+  .header {
+    position: relative;
+    flex-direction: row;
+    height: 100px;
+    width: 100%;
+
+    &__nav {
+      position: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 0;
+      right: 0;
+      z-index: 5;
+      padding: 28px 28px 80px 28px;
+      flex-direction: column;
+      transition: all 0.4s;
+      background-color: $cdarck;
+      transform: translate(0%, 0%);
+      border-radius: 0 0 0 30px;
+
+      ul {
+        display: flex;
+        writing-mode: unset;
+        transform: unset;
+        margin: 10px;
+
+        flex-direction: column;
+        align-items: center;
+      }
+      a {
+        display: block;
+        color: $cprimary;
+        padding: 15px;
+        transition: all 0.1s;
+      }
+      a:hover {
+        transition: all 0.1s;
+        transform: scale(110%);
+        color: $cprimaryhover;
+      }
+      a:active {
+        color: $cprimaryhover;
+      }
+      button {
+        display: flex;
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 35px;
+        height: 35px;
+        background-color: transparent;
+        border-width: 4px;
+        border-color: $cprimary;
+        border-radius: 20px;
+        color: $cprimary;
+        svg {
+          transform: rotate(223deg);
+        }
+      }
+    }
+
+    &__rrss {
+      display: none;
+    }
+  }
+  .oculto {
+    transform: translate(68%, -83%);
+    button {
+      svg {
+        transform: rotate(45deg);
+        transition: all 0.5s;
+      }
+    }
+  }
+
+  .darkheader .header {
+    &__nav {
+      background-color: $clight;
+      transition: all 0.5s;
+    }
+  }
+}
+
+.darkheader {
+  background-color: $clight;
+  transition: background-color 0.5s;
+}
+.darkheader .header {
+  &__logo p {
+    color: $cdarck;
+    transition: color 0.5s;
+  }
+}
