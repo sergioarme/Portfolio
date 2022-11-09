@@ -1,5 +1,5 @@
 ## 🚀 ¡¡¡VAMOS!!!
 
-**Os muestro mi Porfolio creado con Gatsby JS**
+**Os muestro mi Porfolio creado con Gatsby JS y mucho CSS**
 
 
